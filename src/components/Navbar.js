@@ -1,40 +1,59 @@
 import React from "react";
-import '../styles/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const styles = {
-    nav: {
-        background: '#e3f2fd',
-        minHeight: 50,
-        lineHeight: 3.5,
-        fontSize: '1.2rem',
-        color: '#022b3aff',
-        padding: '0 20px',
-    },
-};
+// const styles = {
+//     nav: {
+//         background: '#e3f2fd',
+//         minHeight: 50,
+//         lineHeight: 3.5,
+//         fontSize: '1.2rem',
+//         color: '#022b3aff',
+//         padding: '0 20px',
+//     },
+// };
 
-function Navbar() {
+function Navbar(currentPage, handlePageChange) {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light" style={styles.nav}>
+        <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-                <a className="navbar-brand" href="/">Home</a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
-                    aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
                 <div className="collapse navbar-collapse" id="navbarColor03">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a href="#about">About Me</a>
+                            <a
+                                href="#about-me"
+                                onClick={() => handlePageChange('About-Me')}
+                                className={currentPage === 'About-Me' ? 'nav-link active' : 'nav-link'}
+                            >
+                                About Me
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <a href="#work">Work</a>
+                            <a
+                                href="#projects"
+                                onClick={() => handlePageChange('Projects')}
+                                className={currentPage === 'Projects' ? 'nav-link active' : 'nav-link'}
+                            >
+                                Projects
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <a href="#contact">Contact Me</a>
+                            <a
+                                href="#contact"
+                                onClick={() => handlePageChange('Contact')}
+                                className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
+                            >
+                                Contact
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <a href="#resume">Resume</a>
+                            <a
+                                href="#resume"
+                                onClick={() => handlePageChange('resume')}
+                                className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
+                            >
+                                Resume
+                            </a>
                         </li>
                     </ul>
                 </div>

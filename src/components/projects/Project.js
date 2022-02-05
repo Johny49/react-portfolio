@@ -1,6 +1,6 @@
 import React from "react";
 import Spacer from "../Spacer";
-import { Button } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 
 const styles = {
     cardTitle: {
@@ -12,11 +12,11 @@ const styles = {
 function Project({ name, ghLink, deployedLink, type, imgSrc, alt }) {
     return (
         <div className="container col-10">
-            <div className="card">
+            <Card>
                 <img
-                    className="card-imgSrc-top"
+                    className="card-img-top"
                     src={imgSrc}
-                    alt={"project.alt"}
+                    alt={alt}
                 />
                 <div className="card-body text-center">
                     <h5 className="card-title" style={styles.cardTitle}>{name}</h5>
@@ -33,7 +33,7 @@ function Project({ name, ghLink, deployedLink, type, imgSrc, alt }) {
                         </Button>
                     </div>
                 </div>
-            </div>
+            </Card>
             <Spacer />
         </div>
     );

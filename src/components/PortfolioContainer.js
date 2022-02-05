@@ -1,16 +1,18 @@
 import React, { useState } from "react";
+import Header from './Header';
 import Navbar from './Navbar';
-import About from "./pages/About";
-import Projects from './pages/Projects';
-import Contact from "./pages/Contact";
-import Resume from "./pages/Resume";
+import About from "./about/About";
+import Projects from './projects/Projects';
+import Contact from "./Contact";
+import Resume from "./Resume";
+import Footer from "./Footer";
 
 function PortfolioContainer() {
-    const [currentPage, setCurrentPage] = useState('AboutMe');
+    const [currentPage, setCurrentPage] = useState('About');
 
     const renderPage = () => {
         switch (currentPage) {
-            case 'AboutMe': return <About />;
+            case 'About': return <About />;
             case 'Projects': return <Projects />;
             case 'Contact': return <Contact />;
             case 'Resume': return <Resume />;
@@ -22,9 +24,13 @@ function PortfolioContainer() {
 
     return (
         <div>
+            <Header />
             <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
-            {renderPage()}
-        </div>
+            <div className="container col 12">
+                {renderPage()}
+                <Footer />
+            </div>
+        </div >
     );
 }
 

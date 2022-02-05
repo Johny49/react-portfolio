@@ -1,13 +1,22 @@
+
+  /* CSS HEX Colors
+  --gunmetal: #022b3a
+  --metallic-seaweed: #1f7a8c
+  --beau-blue: #bfdbf7ff;
+  --lavender-web: #e1e5f2
+  --white: #ffffff */
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #022b3a;
+  color: #e1e5f2ff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+  line-height: 1.6em;
 }
+
+.btn a {
+  color: #022b3a;
+  text-decoration: none;
+}
+
